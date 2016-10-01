@@ -1,0 +1,25 @@
+@{
+    ViewData["Title"] = "Index";
+}
+
+@section Scripts {
+    <script src="~/lib/underscore/underscore-min.js"></script>
+    <script src="~/lib/jqueryui/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBk1BakgFgIqDDpwSxm6o9J-HQUMDMX3B8&libraries=places"></script>
+
+    <script src="~/lib/angular/angular.min.js"></script>
+    <script src="~/lib/angular-route/angular-route.min.js"></script>
+    <script src="~/lib/gmaps/gmaps.min.js"></script>
+    <script src="~/lib/ngAutocomplete/src/ngAutocomplete.js"></script>
+    <script src="~/js/app-userTrips.js"></script>
+    <script src="~/js/userTripsController.js"></script>
+    <script src="~/js/tripEditorController.js"></script>
+
+}
+
+<div ng-app="app-userTrips">
+    <div ng-view>
+
+    </div>
+
+</div>

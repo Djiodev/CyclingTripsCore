@@ -1,0 +1,93 @@
+<div>
+    <a href="#/" class="btn btn-sm btn-default"><i class="fa fa-angle-left"></i> Back</a>
+</div>
+
+<h2>Create a New Stop</h2>
+<div class="row" id="newStopDiv">
+    <div>
+        <div class="alert alert-danger" ng-show="vm.errorMessage">{{ vm.errorMessage }}</div>
+        <div class="success text-success" ng-show="vm.successMessage">{{ vm.successMessage }}</div>
+
+        <form novalidate name="newStopForm" ng-submit="vm.getCoord()">
+            <div class="row">
+                <div class="form-group col-md-4">
+                    <label for="arrival">Date</label>
+                    <input class="form-control" id="arrival" name="arrival" ng-model="vm.newStop.arrival"
+                           required
+                           ng-pattern="/^(\d{2})\/(\d{2})\/(\d{4})$/" />
+                    <span class="text-danger" ng-show="newStopForm.arrival.$error.required">Required</span>
+                    <span class="text-danger" ng-show="newStopForm.arrival.$error.pattern">Must be in the format of MM/DD/YYYY</span>
+
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="location">Location</label>
+                    <input class="form-control" id="location" name="location" ng-model="vm.newStop.location" required ng-minlength="3" />
+                    <span class="text-danger" ng-show="newStopForm.location.$error.required">Required</span>
+                    <span class="text-danger" ng-show="newStopForm.location.$error.minlength">Must be at least 3 characters</span>
+                </div>
+                <div class="col-md-4">
+                    <br />
+                    <input type="submit" value="Add New Stop" class="btn btn-success btn-group-justified" ng-disabled="newStopForm.$invalid" />
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>{{ vm.tripName }}</h2>
+
+        <table class="table table-responsive table-striped">
+            <tr>
+                <th>Location</th>
+                <th>Arrival</th>
+                <th></th>
+            </tr>
+            <tr ng-repeat="stop in vm.stops">
+                <td><a ng-click="centerStop(stop)">{{ stop.location }}</a></td>
+                <td>{{ stop.arrival | date:shortDate }}</td>
+                <td><a ng-click="deleteStop(stop)" class="btn btn-danger btn-sm">Delete</a></td>
+
+            </tr>
+        </table>
+
+    </div>
+    <div class="col-md-8">
+        <h2>The Map</h2>
+        <div id="map">
+
+        </div>
+    </div>
+
+
+</div>
+
+<div class="row">
+    <div class="col-md-10 col-md-offset-1 col-sm-12">
+        <div id="comments">
+            <table class="table table-responsive table-striped table-bordered">
+
+                <tr ng-repeat-start="comment in vm.comments">
+
+                    <th>
+                        <img src={{ comment.userprofileimg }} alt="profile image" class="profileImgCommentsMin" />
+                        <span class="text-primary">{{ comment.username }}</span> - <span class="text-muted text">{{ comment.created | date }}</span>
+                        <span class="text-danger">Profile Image Path: {{ comment.userprofileimg }} </span>
+                    </th>
+                    <td rowspan="2" class="cellCenter"><a ng-click="vm.deleteComment(comment)" class="btn btn-danger">Delete</a></td>
+
+                </tr>
+
+                <tr ng-repeat-end>
+                    <td>{{ comment.body }}</td>
+                </tr>
+                
+
+            </table>
+
+
+        </div>
+
+    </div>
+</div>

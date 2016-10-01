@@ -1,0 +1,22 @@
+﻿<h2>Trips</h2>
+
+<table class="table table-responsive table-striped">
+    <tr ng-repeat="trip in vm.trips">
+        <td>
+            <a ng-href="#/{{ trip.name }}/{{ trip.username }}">
+                {{ trip.name }}
+            </a>
+        </td>
+        <td>
+            <a ng-href="#/{{ trip.name }}/{{ trip.username }}">
+                {{ trip.created | date}}
+            </a>
+        </td>
+        <td>
+            <a ng-href="#/{{ trip.name }}/{{ trip.username }}" class="btn btn-sm btn-primary">
+                More Details 
+                <i class="fa fa-chevron-right"></i>
+            </a>
+        </td>
+    </tr>
+</table>

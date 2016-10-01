@@ -1,0 +1,58 @@
+{
+  "name": "automapper-ts",
+  "version": "1.7.0",
+  "description": "A convention-based object-object mapper in JavaScript, written in TypeScript. Ported from the original C# AutoMapper library at https://github.com/AutoMapper/AutoMapper.",
+  "keywords": [
+    "automapper",
+    "convention-based",
+    "typescript",
+    "javascript",
+    "library"
+  ],
+  "authors": [
+    {
+      "name": "Bert Loedeman",
+      "email": "bert@loedeman.nl",
+      "homepage": "http://dotbert.loedeman.nl"
+    }
+  ],
+  "homepage": "https://github.com/loedeman/AutoMapper",
+  "license": "MIT",
+  "main": [
+    "dist/automapper.js"
+  ],
+  "typescript": {
+    "definition": "dist/automapper.d.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/loedeman/AutoMapper.git"
+  },
+  "ignore": [
+    "node_modules",
+    "bower_components",
+    "test",
+    "tools",
+    "lib",
+    "src/ts",
+    "samples",
+    ".settings",
+    ".vscode",
+    "**/.*",
+    "*.md",
+    "AUTHORS.txt",
+    "GulpFile.js",
+    "gulp.config.js",
+    "*.json",
+    "automapper-*.d.ts"
+  ],
+  "_release": "1.7.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "1.7.0",
+    "commit": "196d58b06872522a86b0b918ecfaf57f6d9f52df"
+  },
+  "_source": "https://github.com/loedeman/AutoMapper.git",
+  "_target": "~1.7.0",
+  "_originalSource": "automapper-ts"
+}

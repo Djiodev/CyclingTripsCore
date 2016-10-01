@@ -1,0 +1,28 @@
+@{
+    ViewData["Title"] = "Index";
+}
+
+@section Scripts {
+    <script src="~/lib/underscore/underscore-min.js"></script>
+    <script src="~/lib/jqueryui/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBk1BakgFgIqDDpwSxm6o9J-HQUMDMX3B8&libraries=places"></script>
+
+    <script src="~/lib/angular/angular.min.js"></script>
+    <script src="~/lib/angular-route/angular-route.min.js"></script>
+    <script src="~/lib/gmaps/gmaps.min.js"></script>
+    
+    <script src="~/js/app-anonymousTrips.js"></script>
+    <script src="~/js/AnonymousTripsController.js"></script>
+    <script src="~/js/anonymousSingleTripViewController.js"></script>
+    
+
+    }
+
+
+<div ng-app="app-anonymousTrips">
+    <div ng-view="">
+
+    </div>
+     
+</div>
+

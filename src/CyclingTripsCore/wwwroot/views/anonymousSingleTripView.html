@@ -1,0 +1,65 @@
+﻿<a ng-href="#/" class="btn btn-sm btn-info"><i class="fa fa-angle-left"></i> Back</a>
+
+<div class="tripHeader">
+    <img src="../images/doppietta.jpg" class="profileImgMin" />
+    <h2> {{ vm.username }}, {{ vm.tripName }} </h2>
+</div>
+
+<div class="row">
+
+    <div class="col-sm-3">
+        <table class="table table-responsive table-striped">
+            <tr ng-repeat="stop in vm.stops">
+                <td><a ng-click="vm.setMapCenter(stop)">{{ stop.location }}</a></td>
+                <td><a ng-click="vm.setMapCenter(stop)">{{ stop.arrival | date }}</a></td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="col-md-9">
+        <div id="anonymousMap">
+
+        </div>
+    </div>
+
+</div>
+
+<br />
+
+<div class="alert alert-danger" ng-show="vm.newCommentErrMessage">{{ vm.newCommentErrMessage }}</div>
+
+<div class="row">
+    <div class="col-md-10 col-md-offset-1">
+
+        <div id="comments">
+            <table class="table table-responsive table-striped table-bordered">
+
+                <tr ng-repeat-start="comment in vm.comments">
+
+                    <th>
+                        <img src="../images/doppietta.jpg" alt="profile image" class="profileImgCommentsMin" />
+                        <span class="text-primary">{{ comment.username }}</span> - <span class="text-muted text">{{ comment.created | date }}</span>
+                    </th>
+
+                </tr>
+
+                <tr ng-repeat-end><td>{{ comment.body }}</td></tr>
+
+            </table>
+
+
+        </div>
+
+        <form novalidate name="newCommentForm" ng-submit="vm.addNewComment()">
+
+            <ul id="newComment" class="form-group form-inline">
+                <li class="newComment-form-group">
+                    <img class="profileImgCommentsMin" src="../images/doppietta.jpg" />
+                    <textarea cols="400" type="text" class="form-control newComment" id="body" ng-model="vm.newComment" required placeholder="Add a comment here..."></textarea>
+                    <input type="submit" value="Add New Comment" class="btn btn-success" ng-disabled="newCommentForm.$invalid" />
+                </li>
+            </ul>
+
+        </form>
+    </div>
+</div>

@@ -1,0 +1,51 @@
+@model CyclingTrips.Models.Trip
+
+@{
+    ViewData["Title"] = Model.Name;
+}
+
+@section Scripts{
+    <script src="~/lib/jqueryui/jquery-ui.min.js"></script>
+    <script src="~/lib/angular/angular.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBk1BakgFgIqDDpwSxm6o9J-HQUMDMX3B8&libraries=places"></script>
+    <script src="~/lib/gmaps/gmaps.min.js"></script>
+    <script src="~/js/GoogleMap.js"></script>
+
+
+}
+
+
+
+<div class="row body-content">
+    <div class="col-xs-3 ">
+        <h2>@Model.Name</h2>
+
+        <table class="table table-responsive table-striped">
+            @{ foreach (var stop in Model.Stops)
+                {
+                    <tr>
+                        <td>
+                            <a href="#stop" data-latitude="@stop.Latitude" data-longitude="@stop.Longitude"
+                               data-stopName="@stop.Location" data-stopArrival="@stop.Arrival.ToShortDateString()">
+                                @stop.Location, @stop.Arrival.ToShortDateString()
+                            </a>
+                            @*, @stop.Latitude , @stop.Longitude*@
+                        </td>
+                    </tr>
+                }
+
+            }
+        </table>
+
+    </div>
+
+
+    <div class="col-xs-9">
+        <h2></h2>
+        <div id="googleMap">
+
+        </div>
+
+    </div>
+</div>
+

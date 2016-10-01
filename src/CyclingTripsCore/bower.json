@@ -1,0 +1,19 @@
+{
+  "name": "asp.net",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "3.3.6",
+    "jquery": "2.2.0",
+    "jqueryui": "~1.12.0",
+    "jquery-validation": "1.14.0",
+    "jquery-validation-unobtrusive": "3.2.6",
+    "automapper-ts": "~1.7.0",
+    "fontawesome": "~4.6.3",    
+    "angular": "~1.5.8",
+    "angular-route": "~1.5.8",
+    "gmaps": "~0.4.24",
+    "underscore": "~1.8.3",
+    "ngAutocomplete": "~1.0.0"
+  
+  }
+}
