@@ -1,3 +1,4 @@
+using CyclingTripsCore.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -12,7 +13,9 @@ namespace CyclingTrips.ViewModels
         [Required]
         [StringLength(255, MinimumLength = 3)]
         public string Location { get; set; }
+
         public double Latitude { get; set; }
+
         public double Longitude { get; set; }
 
         [Required]

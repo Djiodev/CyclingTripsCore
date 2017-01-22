@@ -1,7 +1,7 @@
 ﻿<a ng-href="#/" class="btn btn-sm btn-info"><i class="fa fa-angle-left"></i> Back</a>
 
 <div class="tripHeader">
-    <img src="../images/doppietta.jpg" class="profileImgMin" />
+    <img src="{{ vm.src }}" class="profileImgMin" />
     <h2> {{ vm.username }}, {{ vm.tripName }} </h2>
 </div>
 
@@ -37,7 +37,7 @@
                 <tr ng-repeat-start="comment in vm.comments">
 
                     <th>
-                        <img src="../images/doppietta.jpg" alt="profile image" class="profileImgCommentsMin" />
+                        <img src="{{ comment.src }}" alt="profile image" class="profileImgCommentsMin" />
                         <span class="text-primary">{{ comment.username }}</span> - <span class="text-muted text">{{ comment.created | date }}</span>
                     </th>
 
@@ -54,7 +54,7 @@
 
             <ul id="newComment" class="form-group form-inline">
                 <li class="newComment-form-group">
-                    <img class="profileImgCommentsMin" src="../images/doppietta.jpg" />
+                    <img class="profileImgCommentsMin" src="{{ vm.src }}" />
                     <textarea cols="400" type="text" class="form-control newComment" id="body" ng-model="vm.newComment" required placeholder="Add a comment here..."></textarea>
                     <input type="submit" value="Add New Comment" class="btn btn-success" ng-disabled="newCommentForm.$invalid" />
                 </li>

@@ -3,8 +3,8 @@
     <div class="text-danger" ng-show="vm.errorMessage">{{ vm.errorMessage }}</div>
     <table class="table table-responsive table-striped">
         <tr ng-repeat="trip in vm.trips">
-            <td>{{ trip.name }}</td>
-            <td>{{ trip.created | date }}</td>
+            <td><a ng-href="#/editor/{{ trip.name }}" ng-click="vm.customizeTrip()">{{ trip.name }}</a></td>
+            <td><a ng-href="#/editor/{{ trip.name }}" ng-click="vm.customizeTrip()">{{ trip.created | date }}</a></td>
             <td>
                 <a ng-href="#/editor/{{ trip.name }}" ng-click="vm.customizeTrip()" class="btn btn-sm btn-primary">Manage</a>
                 <a ng-click="vm.deleteTrip(trip)" class="btn btn-sm btn-danger">Delete</a>

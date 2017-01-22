@@ -15,5 +15,7 @@ namespace CyclingTrips.ViewModels
         [Required]
         public string Username { get; set; }
         public string UserProfileImg { get; set; }
+        public int ID { get; set; }
+        public DateTime Created { get; set; }
     }
 }

@@ -8,12 +8,16 @@
     "jquery-validation": "1.14.0",
     "jquery-validation-unobtrusive": "3.2.6",
     "automapper-ts": "~1.7.0",
-    "fontawesome": "~4.6.3",    
+    "fontawesome": "~4.6.3",
     "angular": "~1.5.8",
     "angular-route": "~1.5.8",
     "gmaps": "~0.4.24",
     "underscore": "~1.8.3",
-    "ngAutocomplete": "~1.0.0"
-  
+    "ngAutocomplete": "~1.0.0",
+    "angular-material": "~1.1.1",
+    "eonasdan-bootstrap-datetimepicker": "~4.17.45"
+  },
+  "resolutions": {
+    "angular": ">=1.2.0"
   }
 }

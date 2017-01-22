@@ -1,8 +1,12 @@
 ﻿body {
-    font-family: sans-serif;
     padding-top: 50px;
     padding-bottom: 20px;
     margin: 0;
+    font-size: 17px;
+}
+
+body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 /* Wrapping element */
@@ -17,6 +21,20 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+.table>tbody>tr>td,
+.table>tbody>tr>th,
+.table>tfoot>tr>td,
+.table>tfoot>tr>th,
+.table>thead>tr>td,
+.table>thead>tr>th {
+    text-transform: capitalize;
+}
+
+span.text-danger {
+    color: #ff1717;
+    font-size: 15px;
 }
 
 /* Carousel */
@@ -54,6 +72,17 @@ textarea {
         -o-transition: left ease .25s;
         -webkit-transition: left ease .25s;
         transition: left ease .25s;
+    }
+
+.navbar-inverse {
+    background-color: #52d49d;
+    border-bottom: 2px solid #62edb2;
+}
+
+    .navbar-inverse .navbar-nav > li > a,
+    .navbar-inverse .navbar-brand,
+    .navbar-inverse .btn-link {
+        color: #ffffff;
     }
 
 #sidebarToggle {
@@ -106,8 +135,17 @@ textarea {
     cursor: default;
 }
 
+.nav > li > a {
+    font-variant: small-caps;
+    color: white;
+}
+
+    .nav > li > a:hover, .nav > li > a:focus {
+        color: #273b4e;
+    }
+
 .userMenu {
-    font-size: 12px;
+    font-size: 15px;
 }
 
     .userMenu li {
@@ -197,7 +235,87 @@ textarea.newComment {
     padding: 0;
 }
 
-.table tbody>tr>td.cellCenter {
+.table tbody > tr > td.cellCenter {
     text-align: center;
     vertical-align: middle;
 }
+
+.form-control {
+    font-size: 17px;
+}
+
+    .form-control:focus {
+        border-color: #52d49d;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+.btn {
+    font-size: 17px;
+}
+
+.stops {
+    list-style: none;
+    padding-left: 0;
+}
+
+    .stops > li {
+        position: relative;
+        margin-bottom: 30px;
+    }
+
+        .stops > li .arrival {
+            background-color: #0eca93;
+            text-align: center;
+            color: white;
+            width: 60px;
+            border-radius: 5px;
+        }
+
+            .stops > li .arrival .year {
+                font-size: 11px;
+                background-color: #0f8d68;
+                font-weight: bold;
+                padding: 4px 6px;
+                border-radius: 0 0 5px 5px;
+            }
+
+            .stops > li .arrival .month {
+                font-size: 14px;
+                text-transform: uppercase;
+                font-weight: bold;
+                padding: 2px 6px;
+            }
+
+            .stops > li .arrival .day {
+                font-size: 20px;
+                padding: 6px 15px;
+                background-color: #eaf8e9;
+                color: #2dae77;
+            }
+
+        .stops > li > .location {
+            position: absolute;
+            top: 30px;
+            left: 100px;
+            font-weight: bold;
+            text-transform: capitalize;
+        }
+
+        .stops > li > .delete-btn {
+            position: absolute;
+            top: 25px;
+            left: 300px;
+        }
+
+.btn-danger {
+    color: #fff;
+    background-color: rgba(255, 48, 48, 0.83);
+    border-color: rgba(195, 6, 0, 0.73);
+}
+
+    .btn-danger:hover {
+        color: #fff;
+        background-color: rgba(255, 6, 0, 0.83);
+        border-color: rgba(255, 8, 0, 0.5);
+    }

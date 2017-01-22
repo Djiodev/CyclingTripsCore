@@ -39,6 +39,7 @@ namespace CyclingTripsCore
         {
             services.AddSingleton(_config);
 
+            
             //if(_env.IsEnvironment("Development") || _env.IsEnvironment("Testing"))
             //{
             //    services.AddScoped<IMailService, DebugMailService>();
@@ -69,6 +70,9 @@ namespace CyclingTripsCore
 
             // Add framework services.
             services.AddMvc();
+
+            services.AddCors();            
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -88,6 +92,12 @@ namespace CyclingTripsCore
             {
                 app.UseExceptionHandler("/Home/Error");
             }
+
+            app.UseCors(builder =>
+            builder.AllowAnyOrigin()
+            .WithHeaders("*")
+            );
+
 
             app.UseStaticFiles();
 

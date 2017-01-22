@@ -29,6 +29,7 @@
             $http.get("/api/trips/" + vm.tripName + "/comments")
                 .then(function (response) {
                     angular.copy(response.data, vm.comments);
+                    console.log(vm.comments[0]);
                     },
                     function (err) {
                         vm.commentsErrorMessage = "Failed to load comments";
@@ -71,7 +72,15 @@
 							'<div class="stopWindow">' +
 							'<h4>' + item.location + ', ' + $filter('date')(item.arrival, 'dd MMM yyyy') + '</h4>' +
                             '<a ng-click="vm.infoWindowDelete()" class="btn btn-danger btn-sm">Delete</a>' +
-							'</div>'
+							'</div>'+
+                            '<div class="arrival">' +
+                            '<div class="month">' + $filter('date')(item.arrival, 'MMM') + '</div>' +
+                            '<div class="day">' + $filter('date')(item.arrival, 'd') + '</div>' +
+                            '</div>' +
+                            '<div class="location">{{ stop.location }}</div>' +
+                            '<div class="delete-btn">' +
+                                '<a ng-click="deleteStop(stop)" class="btn btn-danger btn-sm">Delete</a>' +
+                            '</div>'
                     }
                 });
             });
@@ -89,7 +98,7 @@
 
         vm.infoWindowDelete = function () {
             alert("InfoWindow Delete!");
-        }
+        };
 
         $scope.centerStop = function (stop) {
             vm.map.setCenter({
@@ -125,7 +134,7 @@
         }
 
         vm.deleteComment = function (commentToDelete) {
-            var id = parseInt(commentToDelete.id);
+            var id = commentToDelete.id;
             $http.delete("/api/trips/" + vm.tripName + "/comments/" + id)
                 .then(function (response) {
                     vm.comments.pop(commentToDelete);

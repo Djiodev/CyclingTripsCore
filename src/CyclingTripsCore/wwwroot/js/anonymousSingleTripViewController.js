@@ -13,6 +13,13 @@
         vm.comments = [];
         vm.newComment = "";
         vm.errorMessage = "";
+        if (vm.username === "Djio") {
+            vm.src = "../images/Djio.jpg";
+        }
+        else {
+            vm.src = "../images/User.jpg";
+        }
+
         
 
         $http.get("/api/alltrips/" + vm.tripName + "/" + vm.username + "/stops")
@@ -29,6 +36,14 @@
             $http.get("/api/alltrips/" + vm.tripName + "/" + vm.username + "/comments")
                 .then(function (response) {
                     angular.copy(response.data, vm.comments);
+                    for (var i = 0; i < vm.comments.length; i++) {
+                        if (vm.comments[i].username === "Djio") {
+                            vm.comments[i].src = "../images/Djio.jpg";
+                        }
+                        else {
+                            vm.comments[i].src = "../images/User.jpg";
+                        }
+                    }
                 },
                 function (err) {
                     vm.commentsErrorMessage = "Failed to load comments";
